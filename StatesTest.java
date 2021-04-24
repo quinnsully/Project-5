@@ -13,6 +13,7 @@ public class StatesTest extends TestCase {
     public void setUp() {
         Race white = new Race("White", 1000, 37);
         Race black = new Race("Black", 1000, 47);
+        races = new LinkedList<Race>();
         races.add(white);
         races.add(black);
         washington = new States("DC", races);
@@ -23,7 +24,12 @@ public class StatesTest extends TestCase {
      */
     public void testGetInfo() {
         Race compared = new Race("White", 1000, 37);
-        assertEquals(compared, washington.getInfo());
+        Race compared2 = new Race("Black", 1000, 47);
+        LinkedList<Race> races2 = new LinkedList<Race>();
+        races2.add(compared);
+        races2.add(compared2);
+        
+        assertEquals(races2, washington.getInfo());
     }
 
     /**
