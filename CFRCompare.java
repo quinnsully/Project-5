@@ -1,3 +1,11 @@
+// Virginia Tech Honor Code Pledge:
+//
+// As a Hokie, I will conduct myself with honor and integrity at all times.
+// I will not lie, cheat, or steal, nor will I accept the actions of those who
+// do.
+// -- Quinn Sullivan (quinnsullivan)
+// -- Daniel Petrenko (danielp18)
+// -- Kirti Shukla (kshukla01)
 package prj5;
 
 import java.util.Comparator;
@@ -5,7 +13,10 @@ import java.util.Comparator;
 /**
  * Compares the CFRs of two states
  * 
- *
+ * @author <Quinn Sullivan> <quinnsullivan>
+ * @author Daniel Petrenko <danielp18>
+ * @author Kirti Shukla <kshukla01>
+ * @version <4/24/2021>
  */
 public class CFRCompare implements Comparator<Race> {
 

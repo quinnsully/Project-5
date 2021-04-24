@@ -1,16 +1,28 @@
+// Virginia Tech Honor Code Pledge:
+//
+// As a Hokie, I will conduct myself with honor and integrity at all times.
+// I will not lie, cheat, or steal, nor will I accept the actions of those who
+// do.
+// -- Quinn Sullivan (quinnsullivan)
+// -- Daniel Petrenko (danielp18)
+// -- Kirti Shukla (kshukla01)
 package prj5;
 
 import java.util.Iterator;
 
 /**
- * Testing LinkedList class
- * 
+ * Tests the linked list class
  *
+ * @author <Quinn Sullivan> <quinnsullivan>
+ * @author Daniel Petrenko <danielp18>
+ * @author Kirti Shukla <kshukla01>
+ * @version <4/24/2021>
  */
 public class LinkedListTest extends student.TestCase {
 
-    LinkedList<String> list;
+    private LinkedList<String> list;
     private Iterator<String> iter;
+
     /**
      * sets up test classes
      */
@@ -18,22 +30,23 @@ public class LinkedListTest extends student.TestCase {
         list = new LinkedList<String>();
         iter = list.iterator();
     }
-    
+
 
     /**
      * testing add() two param method w/ null
      */
-    
     public void testAdd2Null() {
         Exception e = null;
         try {
             list.add(0, null);
-        } 
+        }
         catch (Exception exception) {
             e = exception;
         }
         assertTrue(e instanceof IllegalArgumentException);
     }
+
+
     /**
      * testing add() with index out of bounds
      */
@@ -41,7 +54,7 @@ public class LinkedListTest extends student.TestCase {
         Exception e = null;
         try {
             list.add(2, "A");
-        } 
+        }
         catch (Exception exception) {
             e = exception;
         }
@@ -49,13 +62,14 @@ public class LinkedListTest extends student.TestCase {
         e = null;
         try {
             list.add(-1, "A");
-        } 
+        }
         catch (Exception exception) {
             e = exception;
         }
-        assertTrue( e instanceof IndexOutOfBoundsException);
+        assertTrue(e instanceof IndexOutOfBoundsException);
     }
-    
+
+
     /**
      * testing add() with two param
      */
@@ -72,7 +86,7 @@ public class LinkedListTest extends student.TestCase {
         assertEquals(4, list.size());
     }
 
-    
+
     /**
      * testing() add with one param
      */
@@ -83,7 +97,8 @@ public class LinkedListTest extends student.TestCase {
         assertEquals("B", list.get(1));
 
     }
-    
+
+
     /**
      * testing add() one param method with null
      */
@@ -91,22 +106,24 @@ public class LinkedListTest extends student.TestCase {
         Exception e = null;
         try {
             list.add(null);
-        } 
+        }
         catch (Exception exception) {
             e = exception;
         }
         assertTrue(e instanceof IllegalArgumentException);
     }
-    
+
+
     /**
      * testing isEmpty()
      */
     public void testIsEmpty() {
-        assertTrue( list.isEmpty());
+        assertTrue(list.isEmpty());
         list.add("test");
         assertFalse(list.isEmpty());
     }
-    
+
+
     /**
      * testing remove(object)
      */
@@ -114,14 +131,15 @@ public class LinkedListTest extends student.TestCase {
         assertFalse(list.remove(null));
         list.add("A");
         list.add("B");
-        assertTrue( list.remove("A"));
-        assertEquals( "B", list.get(0));
-        assertEquals( 1, list.size());
+        assertTrue(list.remove("A"));
+        assertEquals("B", list.get(0));
+        assertEquals(1, list.size());
         list.add("C");
         assertTrue(list.remove("C"));
         assertEquals("B", list.get(0));
     }
-    
+
+
     /**
      * testing remove(index)
      */
@@ -129,7 +147,7 @@ public class LinkedListTest extends student.TestCase {
         Exception e = null;
         try {
             list.remove(2);
-        } 
+        }
         catch (Exception exception) {
             e = exception;
         }
@@ -137,12 +155,12 @@ public class LinkedListTest extends student.TestCase {
         e = null;
         try {
             list.remove(-1);
-        } 
+        }
         catch (Exception exception) {
             e = exception;
         }
         assertTrue(e instanceof IndexOutOfBoundsException);
-                
+
         list.add("A");
         list.add("B");
         assertTrue(list.remove(1));
@@ -153,14 +171,15 @@ public class LinkedListTest extends student.TestCase {
         e = null;
         try {
             list.remove(2);
-        } 
+        }
         catch (Exception exception) {
             e = exception;
         }
         assertTrue(e instanceof IndexOutOfBoundsException);
-        
+
     }
-    
+
+
     /**
      * testing get()
      */
@@ -169,13 +188,14 @@ public class LinkedListTest extends student.TestCase {
         list.add("A");
         try {
             list.get(1);
-        } 
+        }
         catch (IndexOutOfBoundsException e) {
             exception = e;
         }
         assertTrue(exception instanceof IndexOutOfBoundsException);
     }
-    
+
+
     /**
      * testing contains()
      */
@@ -188,7 +208,8 @@ public class LinkedListTest extends student.TestCase {
         list.add("C");
         assertTrue(list.contains("C"));
     }
-    
+
+
     /**
      * testing clear()
      */
@@ -199,7 +220,8 @@ public class LinkedListTest extends student.TestCase {
         assertEquals(0, list.size());
 
     }
-    
+
+
     /**
      * testing lastIndexOf()
      */
@@ -214,7 +236,8 @@ public class LinkedListTest extends student.TestCase {
         list.add("A");
         assertEquals(3, list.lastIndexOf("A"));
     }
-    
+
+
     /**
      * testing toString()
      */
@@ -226,7 +249,8 @@ public class LinkedListTest extends student.TestCase {
         list.add("C");
         assertEquals(test1, list.toString());
     }
-    
+
+
     /**
      * Testing toArray() method
      */
@@ -238,7 +262,8 @@ public class LinkedListTest extends student.TestCase {
         assertEquals("B", list.toArray()[1]);
         assertEquals("C", list.toArray()[2]);
     }
-    
+
+
     /**
      * Testing equals() method
      */
@@ -252,18 +277,18 @@ public class LinkedListTest extends student.TestCase {
         list.add("A");
         list.add("B");
         list.add("C");
-        
+
         test4.add("A");
         test4.add("B");
         test4.add("C");
-        
+
         test5.add("A");
         test5.add("wrong");
         test5.add("C");
-        
+
         test6.add("A");
         test6.add("B");
-        
+
         assertTrue(list.equals(test1));
         assertFalse(list.equals(test2));
         assertFalse(list.equals(test3));
@@ -271,11 +296,12 @@ public class LinkedListTest extends student.TestCase {
         assertFalse(list.equals(test5));
         assertFalse(list.equals(test6));
     }
-    /** 
+
+
+    /**
      * tests the iterator methods
      */
-    public void testIterator()
-    {
+    public void testIterator() {
         assertFalse(iter.hasNext());
         list.add("A");
         list.add("B");
@@ -286,7 +312,6 @@ public class LinkedListTest extends student.TestCase {
         iter = list.iterator();
         assertTrue(iter.hasNext());
         assertEquals("A", iter.next());
-        
-        
+
     }
 }
