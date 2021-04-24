@@ -1,8 +1,9 @@
 /**
  * 
  */
-package project5;
+package prj5;
 
+import java.util.Iterator;
 
 /**
  * This is a basic implementation of a linked list
@@ -23,7 +24,7 @@ package project5;
  * @param <E>
  *            This is the type of object that this class will store
  */
-public class LinkedList<E> {
+public class LinkedList<E> implements Iterable<E> {
         /**
          * This represents a node in a singly linked list. This node stores data
          * along with having a pointer to the next node in the list
@@ -44,7 +45,7 @@ public class LinkedList<E> {
          * @version 03/17/2017
          * @version 10/14/2019
          */
-        public class Node<D> {
+        public static class Node<D> {
 
             // The data element stored in the node.
             private D data;
@@ -94,7 +95,7 @@ public class LinkedList<E> {
             }
         }
 
-        private Node<E> head;
+        private  Node<E> head;
 
         // the size of the linked list
         private int size;
@@ -471,5 +472,38 @@ public class LinkedList<E> {
             }
 
             return false;
+        }
+
+        public static class ListIterator<E> implements Iterator<E>
+        {
+            
+            private Node<E> current;
+            private LinkedList<E> list;
+            /**
+             * 
+             * @param blah
+             */
+            public ListIterator(LinkedList<E> blah)
+            {
+                list = blah;
+                
+                current = list.head;
+            }
+            public boolean hasNext()
+            {
+                return current != null;
+            }
+            public E next()
+            {
+                E data = current.getData();
+                current = current.next();
+                return data;                                 
+            }
+            
+        }
+        @Override
+        public Iterator<E> iterator() {
+            
+            return new ListIterator<E>(this);
         }
 }

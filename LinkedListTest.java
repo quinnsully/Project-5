@@ -1,4 +1,6 @@
-package project5;
+package prj5;
+
+import java.util.Iterator;
 
 /**
  * Testing LinkedList class
@@ -8,12 +10,13 @@ package project5;
 public class LinkedListTest extends student.TestCase {
 
     LinkedList<String> list;
-    
+    private Iterator<String> iter;
     /**
      * sets up test classes
      */
     public void setUp() {
         list = new LinkedList<String>();
+        iter = list.iterator();
     }
     
 
@@ -267,5 +270,23 @@ public class LinkedListTest extends student.TestCase {
         assertTrue(list.equals(test4));
         assertFalse(list.equals(test5));
         assertFalse(list.equals(test6));
+    }
+    /** 
+     * tests the iterator methods
+     */
+    public void testIterator()
+    {
+        assertFalse(iter.hasNext());
+        list.add("A");
+        list.add("B");
+        list.add("C");
+        list.add("D");
+        list.add("E");
+        list.add("F");
+        iter = list.iterator();
+        assertTrue(iter.hasNext());
+        assertEquals("A", iter.next());
+        
+        
     }
 }
