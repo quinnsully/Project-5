@@ -43,7 +43,7 @@ public class StatesTest extends TestCase {
      * Tests the toString method
      */
     public void testToString() {
-        assertEquals("White: 1000 cases, 3.7% CFR" + "\n"
+        assertEquals("DC \n White: 1000 cases, 3.7% CFR" + "\n"
             + "Black: 1000 cases, 4.7% CFR" + "\n" + "====", washington.toString());
     }
 

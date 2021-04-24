@@ -26,11 +26,16 @@ public class Race {
         return fatality;
     }
     
-    public String covidCalculator() {
+    public double covidCalculator() {
         double result = fatality / cases;
         
-        DecimalFormat df = new DecimalFormat("##.#");
-        return String.valueOf(df.format(result));
+          if (fatality == -1 || cases == -1)
+          {
+          result = -.01;
+          }
+         
+        
+        return result;
     }
     
     public String toString() {
@@ -39,8 +44,10 @@ public class Race {
         StringBuilder builder = new StringBuilder("");
         int casesCast = (int) getCases();
         builder.append(name + ": ");
+        DecimalFormat df = new DecimalFormat("##.#%");
+        String blah = df.format(covidCalculator());
         builder.append(casesCast + " cases, ");
-        builder.append(covidCalculator() + "% CFR");
+        builder.append(blah + " CFR");
 
         return builder.toString();
     }

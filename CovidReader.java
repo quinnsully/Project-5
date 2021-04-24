@@ -55,7 +55,7 @@ public class CovidReader {
             }
             for (int i = 1; i < 6; i++) {
 
-                Race hold = new Race(names[i].split("_")[1], Double.valueOf(
+                Race hold = new Race(names[i].split("_")[1].toLowerCase(), Double.valueOf(
                     temp[i]), Double.valueOf(temp[i + 5]));
                 races.add(hold);
 

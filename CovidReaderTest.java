@@ -17,7 +17,7 @@ public class CovidReaderTest extends student.TestCase {
      */
     public void setUp() throws FileNotFoundException
     {
-        reader = new CovidReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
+        reader = new CovidReader("Cases_and_Deaths.csv");
     }
     /**
      * tests the toString method
@@ -49,6 +49,6 @@ public class CovidReaderTest extends student.TestCase {
             "other: 777332 cases, 0.7% CFR\n" +
             "asian: -1 cases, -1% CFR\n" +
             "latinx: 738177 cases, -1% CFR\n" +
-            "=====\n", reader.toString());
+            "===== \n", reader.toString());
     }
 }

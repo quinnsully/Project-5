@@ -1,4 +1,4 @@
-package project5;
+package prj5;
 
 import java.util.Comparator;
 
@@ -7,21 +7,14 @@ import java.util.Comparator;
  * 
  *
  */
-public class AlphaCompare implements Comparator<String> {
-
-    /**
-     * Empty constructor
-     */
-    public AlphaCompare() {
-        // left blank intentionally
-    }
+public class AlphaCompare implements Comparator<Race> {
 
     /**
      * Compare method
      */
     @Override
-    public int compare(String state1, String state2) {
-        return state1.compareTo(state2);
+    public int compare(Race race1, Race race2) {
+        return race2.getName().compareToIgnoreCase(race1.getName());
     }
 
 

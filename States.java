@@ -1,38 +1,47 @@
 package prj5;
 
+import java.util.Comparator;
+
 public class States {
 
-    private String state;
+    private String name;
     private LinkedList<Race> info;
 
     public States(String inputState, LinkedList<Race> races) {
         info = new LinkedList<Race>();
-        this.state = inputState;
+        this.name = inputState;
         this.info = races;
     }
 
 
     public String getState() {
-        return state;
+        return name;
     }
 
 
     public LinkedList<Race> getInfo() {
         return info;
     }
-
-
+   
     public String toString() {
         StringBuilder builder = new StringBuilder("");
 
-        builder.append(state);
+        builder.append(name);
         builder.append("\n");
-        for (int i = 0; i < info.size(); i++) {
-            builder.append(info);
+        info.sort(new AlphaCompare());
+        for (Race race: info) {
+            
+            builder.append(race);
             builder.append("\n");
         }
-        builder.append("====");
-
+        builder.append("==== \n");
+        info.sort(new CFRCompare());
+        for (Race race: info) {
+            
+            builder.append(race);
+            builder.append("\n");
+        }
+        builder.append("==== \n");
         return builder.toString();
     }
 

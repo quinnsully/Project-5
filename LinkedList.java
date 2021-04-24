@@ -3,6 +3,7 @@
  */
 package prj5;
 
+import java.util.Comparator;
 import java.util.Iterator;
 
 /**
@@ -45,13 +46,13 @@ public class LinkedList<E> implements Iterable<E> {
          * @version 03/17/2017
          * @version 10/14/2019
          */
-        public static class Node<D> {
+        public static class Node<E> {
 
             // The data element stored in the node.
-            private D data;
+            private E data;
 
             // The next node in the sequence.
-            private Node<D> next;
+            private Node<E> next;
 
             /**
              * Creates a new node with the given data
@@ -59,7 +60,7 @@ public class LinkedList<E> implements Iterable<E> {
              * @param d
              *            the data to put inside the node
              */
-            public Node(D d) {
+            public Node(E d) {
                 data = d;
             }
 
@@ -70,7 +71,7 @@ public class LinkedList<E> implements Iterable<E> {
              * @param n
              *            the node after this one
              */
-            public void setNext(Node<D> n) {
+            public void setNext(Node<E> n) {
                 next = n;
             }
 
@@ -80,7 +81,7 @@ public class LinkedList<E> implements Iterable<E> {
              *
              * @return the next node
              */
-            public Node<D> next() {
+            public Node<E> next() {
                 return next;
             }
 
@@ -90,7 +91,7 @@ public class LinkedList<E> implements Iterable<E> {
              *
              * @return the data in the node
              */
-            public D getData() {
+            public E getData() {
                 return data;
             }
         }
@@ -473,7 +474,41 @@ public class LinkedList<E> implements Iterable<E> {
 
             return false;
         }
-
+        private void insert(Node<E> node, Comparator<E> comp)
+        {
+            E item = node.getData();
+            Node<E> curr = head;
+            Node<E> prev = null;
+            
+            while (curr != null && comp.compare(item, curr.getData()) < 0)
+            {
+                prev = curr;
+                curr = curr.next();
+            }
+            if (prev!= null)
+            {
+                prev.setNext(node);
+                node.setNext(curr);
+            }
+            else {
+                node.setNext(head);
+                head = node;
+            }
+        }
+        public void sort(Comparator<E> comp)
+        {
+            Node<E> sorted = head;
+            Node<E> unsorted = sorted.next();
+            sorted.setNext(null);
+            
+            while (unsorted != null)
+            {
+                Node<E> nodeToInsert = unsorted;
+                unsorted = unsorted.next();
+                insert(nodeToInsert, comp);
+            }
+        }
+        
         public static class ListIterator<E> implements Iterator<E>
         {
             
