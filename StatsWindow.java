@@ -147,40 +147,7 @@ public class StatsWindow {
 
                 window.addShape(title);
 
-                DecimalFormat df = new DecimalFormat("##.#%");
-
-                for (int i = 0; i < races.size(); i++) {
-                    if (races.get(i).getCases() == -1 || races.get(i)
-                        .getFatality() == -1) {
-
-                        TextShape dispRace = new TextShape((200 + (100 * i)),
-                            210, races.get(i).getName());
-
-                        window.addShape(dispRace);
-
-                        TextShape notAvailable = new TextShape((200 + 100 * i),
-                            190, "NA");
-
-                        window.addShape(notAvailable);
-                    }
-                    else {
-
-                        TextShape dispRace = new TextShape((200 + (100 * i)),
-                            210, races.get(i).getName());
-
-                        window.addShape(dispRace);
-
-                        int height = (int)(races.get(i).covidCalculator() * 100);
-                        Shape bar = new Shape((200 + 100 * i), 205 - (height
-                            * 25), BAR_WIDTH, (height * 25), Color.BLUE);
-
-                        TextShape CFR = new TextShape((200 + 100 * i), 225, df
-                            .format(races.get(i).covidCalculator()));
-
-                        window.addShape(bar);
-                        window.addShape(CFR);
-                    }
-                }
+                drawing();
             }
         }
     }
@@ -205,40 +172,7 @@ public class StatsWindow {
                     "GA Case Fatality Ratio by Race");
                 window.addShape(title);
 
-                DecimalFormat df = new DecimalFormat("##.#%");
-
-                for (int i = 0; i < races.size(); i++) {
-                    if (races.get(i).getCases() == -1 || races.get(i)
-                        .getFatality() == -1) {
-
-                        TextShape dispRace = new TextShape((200 + (100 * i)),
-                            210, races.get(i).getName());
-
-                        window.addShape(dispRace);
-
-                        TextShape notAvailable = new TextShape((200 + 100 * i),
-                            190, "NA");
-
-                        window.addShape(notAvailable);
-                    }
-                    else {
-
-                        TextShape dispRace = new TextShape((200 + (100 * i)),
-                            210, races.get(i).getName());
-
-                        window.addShape(dispRace);
-
-                        int width = (int)(races.get(i).covidCalculator() * 100);
-                        Shape bar = new Shape((200 + 100 * i), 205 - (width
-                            * 25), BAR_WIDTH, (width * 25), Color.BLUE);
-
-                        TextShape CFR = new TextShape((200 + 100 * i), 225, df
-                            .format(races.get(i).covidCalculator()));
-
-                        window.addShape(bar);
-                        window.addShape(CFR);
-                    }
-                }
+                drawing();
             }
         }
     }
@@ -263,40 +197,7 @@ public class StatsWindow {
                     "MD Case Fatality Ratio by Race");
                 window.addShape(title);
 
-                DecimalFormat df = new DecimalFormat("##.#%");
-
-                for (int i = 0; i < races.size(); i++) {
-                    if (races.get(i).getCases() == -1 || races.get(i)
-                        .getFatality() == -1) {
-
-                        TextShape dispRace = new TextShape((200 + (100 * i)),
-                            210, races.get(i).getName());
-
-                        window.addShape(dispRace);
-
-                        TextShape notAvailable = new TextShape((200 + 100 * i),
-                            190, "NA");
-
-                        window.addShape(notAvailable);
-                    }
-                    else {
-
-                        TextShape dispRace = new TextShape((200 + (100 * i)),
-                            210, races.get(i).getName());
-
-                        window.addShape(dispRace);
-
-                        int width = (int)(races.get(i).covidCalculator() * 100);
-                        Shape bar = new Shape((200 + 100 * i), 205 - (width
-                            * 25), BAR_WIDTH, (width * 25), Color.BLUE);
-
-                        TextShape CFR = new TextShape((200 + 100 * i), 225, df
-                            .format(races.get(i).covidCalculator()));
-
-                        window.addShape(bar);
-                        window.addShape(CFR);
-                    }
-                }
+                drawing();
             }
         }
     }
@@ -321,40 +222,7 @@ public class StatsWindow {
                     "NC Case Fatality Ratio by Race");
                 window.addShape(title);
 
-                DecimalFormat df = new DecimalFormat("##.#%");
-
-                for (int i = 0; i < races.size(); i++) {
-                    if (races.get(i).getCases() == -1 || races.get(i)
-                        .getFatality() == -1) {
-
-                        TextShape dispRace = new TextShape((200 + (100 * i)),
-                            210, races.get(i).getName());
-
-                        window.addShape(dispRace);
-
-                        TextShape notAvailable = new TextShape((200 + 100 * i),
-                            190, "NA");
-
-                        window.addShape(notAvailable);
-                    }
-                    else {
-
-                        TextShape dispRace = new TextShape((200 + (100 * i)),
-                            210, races.get(i).getName());
-
-                        window.addShape(dispRace);
-
-                        int width = (int)(races.get(i).covidCalculator() * 100);
-                        Shape bar = new Shape((200 + 100 * i), 205 - (width
-                            * 25), BAR_WIDTH, (width * 25), Color.BLUE);
-
-                        TextShape CFR = new TextShape((200 + 100 * i), 225, df
-                            .format(races.get(i).covidCalculator()));
-
-                        window.addShape(bar);
-                        window.addShape(CFR);
-                    }
-                }
+                drawing();
             }
         }
     }
@@ -379,40 +247,7 @@ public class StatsWindow {
                     "TN Case Fatality Ratio by Race");
                 window.addShape(title);
 
-                DecimalFormat df = new DecimalFormat("##.#%");
-
-                for (int i = 0; i < races.size(); i++) {
-                    if (races.get(i).getCases() == -1 || races.get(i)
-                        .getFatality() == -1) {
-
-                        TextShape dispRace = new TextShape((200 + (100 * i)),
-                            210, races.get(i).getName());
-
-                        window.addShape(dispRace);
-
-                        TextShape notAvailable = new TextShape((200 + 100 * i),
-                            190, "NA");
-
-                        window.addShape(notAvailable);
-                    }
-                    else {
-
-                        TextShape dispRace = new TextShape((200 + (100 * i)),
-                            210, races.get(i).getName());
-
-                        window.addShape(dispRace);
-
-                        int width = (int)(races.get(i).covidCalculator() * 100);
-                        Shape bar = new Shape((200 + 100 * i), 205 - (width
-                            * 25), BAR_WIDTH, (width * 25), Color.BLUE);
-
-                        TextShape CFR = new TextShape((200 + 100 * i), 225, df
-                            .format(races.get(i).covidCalculator()));
-
-                        window.addShape(bar);
-                        window.addShape(CFR);
-                    }
-                }
+                drawing();
             }
         }
     }
@@ -437,40 +272,50 @@ public class StatsWindow {
                     "VA Case Fatality Ratio by Race");
                 window.addShape(title);
 
-                DecimalFormat df = new DecimalFormat("##.#%");
+                drawing();
 
-                for (int i = 0; i < races.size(); i++) {
-                    if (races.get(i).getCases() == -1 || races.get(i)
-                        .getFatality() == -1) {
+            }
 
-                        TextShape dispRace = new TextShape((200 + (100 * i)),
-                            210, races.get(i).getName());
+        }
+    }
 
-                        window.addShape(dispRace);
 
-                        TextShape notAvailable = new TextShape((200 + 100 * i),
-                            190, "NA");
+    /**
+     * Converts the CFR of a race into a bar that can be put on a graph.
+     */
+    private void drawing() {
+        DecimalFormat df = new DecimalFormat("##.#%");
 
-                        window.addShape(notAvailable);
-                    }
-                    else {
+        for (int i = 0; i < races.size(); i++) {
+            if (races.get(i).getCases() == -1 || races.get(i)
+                .getFatality() == -1) {
 
-                        TextShape dispRace = new TextShape((200 + (100 * i)),
-                            210, races.get(i).getName());
+                TextShape dispRace = new TextShape((200 + (100 * i)), 210, races
+                    .get(i).getName());
 
-                        window.addShape(dispRace);
+                window.addShape(dispRace);
 
-                        int width = (int)(races.get(i).covidCalculator() * 100);
-                        Shape bar = new Shape((200 + 100 * i), 205 - (width
-                            * 25), BAR_WIDTH, (width * 25), Color.BLUE);
+                TextShape notAvailable = new TextShape((200 + 100 * i), 190,
+                    "NA");
 
-                        TextShape CFR = new TextShape((200 + 100 * i), 225, df
-                            .format(races.get(i).covidCalculator()));
+                window.addShape(notAvailable);
+            }
+            else {
 
-                        window.addShape(bar);
-                        window.addShape(CFR);
-                    }
-                }
+                TextShape dispRace = new TextShape((200 + (100 * i)), 210, races
+                    .get(i).getName());
+
+                window.addShape(dispRace);
+
+                int width = (int)(races.get(i).covidCalculator() * 100);
+                Shape bar = new Shape((200 + 100 * i), 205 - (width * 25),
+                    BAR_WIDTH, (width * 25), Color.BLUE);
+
+                TextShape CFR = new TextShape((200 + 100 * i), 225, df.format(
+                    races.get(i).covidCalculator()));
+
+                window.addShape(bar);
+                window.addShape(CFR);
             }
         }
     }
