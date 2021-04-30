@@ -307,9 +307,9 @@ public class StatsWindow {
 
                 window.addShape(dispRace);
 
-                int width = (int)(races.get(i).covidCalculator() * 100);
-                Shape bar = new Shape((200 + 100 * i), 205 - (width * 25),
-                    BAR_WIDTH, (width * 25), Color.BLUE);
+                int height = (int)(races.get(i).covidCalculator() * 100);
+                Shape bar = new Shape((200 + 100 * i), 205 - (height * 25),
+                    BAR_WIDTH, (height * 25), Color.BLUE);
 
                 TextShape CFR = new TextShape((200 + 100 * i), 225, df.format(
                     races.get(i).covidCalculator()));
