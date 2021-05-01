@@ -373,7 +373,7 @@ public class StatsWindow {
 
                 window.addShape(dispRace);
 
-                int height = (int)(races.get(i).covidCalculator() * 100);
+                int height = (int)(races.get(i).covidCalculator() * 100) + 1;
                 Shape bar = new Shape((200 + 100 * i), 205 - (height * 25),
                     BAR_WIDTH, (height * 25), Color.BLUE);
 
