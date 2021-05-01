@@ -42,6 +42,7 @@ public class StatsWindow {
     private AlphaCompare compareName;
     private CFRCompare compareCFR;
     private static int BAR_WIDTH = 20;
+    private Button lastButton;
 
     /**
      * Constructor
@@ -52,6 +53,9 @@ public class StatsWindow {
     public StatsWindow(LinkedList<States> inputState) {
         states = inputState;
         window = new Window();
+        lastButton = null;
+        compareName = new AlphaCompare();
+        compareCFR = new CFRCompare();
 
         window.setTitle("Case Fatality Ratio Graph");
 
@@ -112,7 +116,33 @@ public class StatsWindow {
      *            sorts data alphabetically
      */
     public void clickedSortAlpha(Button button) {
-
+        if (lastButton == null) {
+            // left blank intentionally
+        }
+        else if (lastButton.equals(repDC)) {
+            races.sort(compareName);
+            clickedRepDC(lastButton);
+        }
+        else if (lastButton.equals(repGA)) {
+            races.sort(compareName);
+            clickedRepGA(lastButton);
+        }
+        else if (lastButton.equals(repMD)) {
+            races.sort(compareName);
+            clickedRepMD(lastButton);
+        }
+        else if (lastButton.equals(repNC)) {
+            races.sort(compareName);
+            clickedRepNC(lastButton);
+        }
+        else if (lastButton.equals(repTN)) {
+            races.sort(compareName);
+            clickedRepTN(lastButton);
+        }
+        else if (lastButton.equals(repVA)){
+            races.sort(compareName);
+            clickedRepVA(lastButton);
+        }
     }
 
 
@@ -123,7 +153,33 @@ public class StatsWindow {
      *            sorts data by CFR
      */
     public void clickedSortCFR(Button button) {
-
+        if (lastButton == null) {
+            // left blank intentionally
+        }
+        else if (lastButton.equals(repDC)) {
+            races.sort(compareCFR);
+            clickedRepDC(lastButton);
+        }
+        else if (lastButton.equals(repGA)) {
+            races.sort(compareCFR);
+            clickedRepGA(lastButton);
+        }
+        else if (lastButton.equals(repMD)) {
+            races.sort(compareCFR);
+            clickedRepMD(lastButton);
+        }
+        else if (lastButton.equals(repNC)) {
+            races.sort(compareCFR);
+            clickedRepNC(lastButton);
+        }
+        else if (lastButton.equals(repTN)) {
+            races.sort(compareCFR);
+            clickedRepTN(lastButton);
+        }
+        else if (lastButton.equals(repVA)){
+            races.sort(compareCFR);
+            clickedRepVA(lastButton);
+        }
     }
 
 
@@ -136,6 +192,7 @@ public class StatsWindow {
      */
     public void clickedRepDC(Button button) {
 
+        lastButton = button;
         window.removeAllShapes();
 
         for (States DC : states) {
@@ -162,6 +219,7 @@ public class StatsWindow {
      */
     public void clickedRepGA(Button button) {
 
+        lastButton = button;
         window.removeAllShapes();
 
         for (States GA : states) {
@@ -186,6 +244,8 @@ public class StatsWindow {
      *            represents MD button
      */
     public void clickedRepMD(Button button) {
+
+        lastButton = button;
 
         window.removeAllShapes();
 
@@ -212,6 +272,8 @@ public class StatsWindow {
      */
     public void clickedRepNC(Button button) {
 
+        lastButton = button;
+
         window.removeAllShapes();
 
         for (States NC : states) {
@@ -237,6 +299,8 @@ public class StatsWindow {
      */
     public void clickedRepTN(Button button) {
 
+        lastButton = button;
+
         window.removeAllShapes();
 
         for (States TN : states) {
@@ -261,6 +325,8 @@ public class StatsWindow {
      *            represents VA button
      */
     public void clickedRepVA(Button button) {
+
+        lastButton = button;
 
         window.removeAllShapes();
 
